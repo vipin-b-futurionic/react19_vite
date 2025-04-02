@@ -1,13 +1,11 @@
 import './App.css'
-import './components/EventHandling'
-//import { EventHandling } from './components/EventHandling'
-import { EventProps } from './components/EventProps'
+import {State} from "./components/hooks/State"
 
 const App = () => {
   return(
     <>
+      <State />
       
-      <EventProps />
     </>
   )
 }
