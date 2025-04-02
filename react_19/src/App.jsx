@@ -1,10 +1,11 @@
 import './App.css'
-import {State} from "./components/hooks/State"
+//import {State} from "./components/hooks/State"
+import { ReactUseEffect } from './components/hooks/UseEffect'
 
 const App = () => {
   return(
     <>
-      <State />
+      <ReactUseEffect />
       
     </>
   )
