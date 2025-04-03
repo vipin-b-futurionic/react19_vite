@@ -1,16 +1,40 @@
 import { useEffect, useState } from "react"
 
 export const Picachu = () =>{
-    const[apiData, setApiData] = useState(null)
+    const[pokemon, setPokemon] = useState(null)
+    const[loading, setLoading] = useState(true)
+    const[error, setError] = useState(null)
+
+
     const API = "https://pokeapi.co/api/v2/pokemon/pikachu"
 
-    const fetchPokemon = () =>{
-        fetch(API)
-        .then((res) => res.json())
-        .then((data) =>{
-            setApiData(data)
-        } )
-        .catch((error) => console.log(error))
+    // const fetchPokemon = () => {
+    //      fetch(API)
+    //      .then((res) => res.json())
+    //      .then((data) =>{
+    //         setPokemon(data)
+    //          setLoading(false)
+    //         } )
+    //      .catch((error) => {
+    //          console.log(error)
+    //          setError(error)
+    //          setLoading(false)
+    //     }) 
+    // }// usining promises 
+
+    const fetchPokemon = async () => {
+        try {
+            const res =  await fetch(API)
+            const data = await res.json()
+            setPokemon(data)
+            setLoading(false)
+
+            
+        } catch (error) {
+            setError(error)
+            setLoading(false)
+        }
+
     }
 
     useEffect(() => {
@@ -21,7 +45,20 @@ export const Picachu = () =>{
 
 
 
-if(apiData){
+    if(loading)
+        return(
+            <>
+                <h1>Loading...</h1>
+            </>
+    )
+
+    if(error)
+        return(
+            <div>
+                <h1>Error: {error.message}</h1>
+            </div>
+    )
+
     return (
         <section>
             <header>
@@ -31,15 +68,15 @@ if(apiData){
                 <li>
                     <figure>
                         <img 
-                       src={apiData.sprites.other.dream_world.front_default}
-                        alt={apiData.name}/>
+                       src={pokemon.sprites.other.dream_world.front_default}
+                        alt={pokemon.name}/>
                     </figure>
-                    <h1>{apiData.name}</h1>
+                    <h1>{pokemon.name}</h1>
 
                 </li>
             </ul>
         </section>
     )
-}
+
 
 }
