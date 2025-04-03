@@ -3,13 +3,11 @@ import './App.css'
 import { ReactUseEffect } from './components/hooks/UseEffect'
 import { HowNotToFetchApi } from './components/hooks/UseEffect/HowNotToFetchApi'
 import { Picachu } from './components/hooks/UseEffect/Picachu'
+import { UseRef } from './components/hooks/UseRefs'
 
 const App = () => {
   return(
-    <>
-      <Picachu />
-      
-    </>
+    <UseRef />
   )
 }
 
