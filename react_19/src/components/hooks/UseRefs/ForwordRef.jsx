@@ -20,13 +20,13 @@ export const ForwardRef = () => {
 }
 //after react 19
 // I need to create BeforeReact19Input
-const BeforeReact19Input = ({label, ref}) =>{
+const BeforeReact19Input = (props) =>{
     const id = useId()
     return (
         
         <div>
-            <label htmlFor={id}> {label}</label>
-            <input type="text" ref = {ref} />
+            <label htmlFor={id}> {props.label}</label>
+            <input type="text" ref = {props.ref} />
         </div>
     )
 }

@@ -3,12 +3,13 @@ import './App.css'
 import { ReactUseEffect } from './components/hooks/UseEffect'
 import { HowNotToFetchApi } from './components/hooks/UseEffect/HowNotToFetchApi'
 import { Picachu } from './components/hooks/UseEffect/Picachu'
+import { UseId } from './components/hooks/UseID'
 import { UseRef } from './components/hooks/UseRefs'
 import { ForwardRef } from './components/hooks/UseRefs/ForwordRef'
 
 const App = () => {
   return(
-    <ForwardRef />
+    <UseId />
   )
 }
 
