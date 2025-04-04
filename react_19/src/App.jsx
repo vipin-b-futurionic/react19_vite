@@ -6,10 +6,11 @@ import { Picachu } from './components/hooks/UseEffect/Picachu'
 import { UseId } from './components/hooks/UseID'
 import { UseRef } from './components/hooks/UseRefs'
 import { ForwardRef } from './components/hooks/UseRefs/ForwordRef'
+import { ParentComponent } from './components/PropDrilling'
 
 const App = () => {
   return(
-    <UseId />
+    <ParentComponent />
   )
 }
 
